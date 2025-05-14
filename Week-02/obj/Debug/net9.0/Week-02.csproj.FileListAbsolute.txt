@@ -1,0 +1,15 @@
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\bin\Debug\net9.0\Week-02.exe
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\bin\Debug\net9.0\Week-02.deps.json
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\bin\Debug\net9.0\Week-02.runtimeconfig.json
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\bin\Debug\net9.0\Week-02.dll
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\bin\Debug\net9.0\Week-02.pdb
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\Week-02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\Week-02.AssemblyInfoInputs.cache
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\Week-02.AssemblyInfo.cs
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\Week-02.csproj.CoreCompileInputs.cache
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\Week-02.sourcelink.json
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\Week-02.dll
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\refint\Week-02.dll
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\Week-02.pdb
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\Week-02.genruntimeconfig.cache
+C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Week-02\obj\Debug\net9.0\ref\Week-02.dll
