@@ -2,7 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{0617C7DF-3076-439D-80D7-138A551635DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week_01", "Week_01\Week_01.csproj", "{3B8C2ABF-A90E-4850-8B47-8BDE05D06C4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week-01", "Week-01\Week-01.csproj", "{3B8C2ABF-A90E-4850-8B47-8BDE05D06C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week-02", "Week-02\Week-02.csproj", "{4037513F-9A05-4AA3-B050-E74B8DBCF8B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{3B8C2ABF-A90E-4850-8B47-8BDE05D06C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B8C2ABF-A90E-4850-8B47-8BDE05D06C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B8C2ABF-A90E-4850-8B47-8BDE05D06C4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4037513F-9A05-4AA3-B050-E74B8DBCF8B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4037513F-9A05-4AA3-B050-E74B8DBCF8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4037513F-9A05-4AA3-B050-E74B8DBCF8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4037513F-9A05-4AA3-B050-E74B8DBCF8B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
