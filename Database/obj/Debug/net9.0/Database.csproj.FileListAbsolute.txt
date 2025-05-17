@@ -12,3 +12,18 @@ C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Database\ob
 C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Database\obj\Debug\net9.0\Database.pdb
 C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Database\obj\Debug\net9.0\Database.genruntimeconfig.cache
 C:\Users\Telmo Claro\OneDrive - Hogeschool Rotterdam\GitHub\Database\Database\obj\Debug\net9.0\ref\Database.dll
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\bin\Debug\net9.0\Database.exe
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\bin\Debug\net9.0\Database.deps.json
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\bin\Debug\net9.0\Database.runtimeconfig.json
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\bin\Debug\net9.0\Database.dll
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\bin\Debug\net9.0\Database.pdb
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\Database.AssemblyInfoInputs.cache
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\Database.AssemblyInfo.cs
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\Database.csproj.CoreCompileInputs.cache
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\Database.sourcelink.json
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\Database.dll
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\refint\Database.dll
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\Database.pdb
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\Database.genruntimeconfig.cache
+C:\Users\Telmo Claro\Documents\Projects\Database\Database\obj\Debug\net9.0\ref\Database.dll

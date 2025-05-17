@@ -38,7 +38,6 @@ volumes:
   pgdata:
   pgadmin-data:
 
-
 networks:
   mynetwork:
     driver: bridge
