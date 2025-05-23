@@ -1,73 +1,99 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace Model
+namespace Week_02;
+
+/*
+ * The goal of this week:
+ * Make a new DB using the one from week01 but this time with Entity Framework
+ */
+
+public class Model
 {
- 
     public class MyContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder builder)
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Dept_Location> Dept_Locations { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Works_on> Works_ons { get; set; }
+        public DbSet<Dependent> Dependents { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            builder.UseNpgsql(@"Host=localhost:5432;Username=postgres;Database=efdb;Maximum Pool Size=200");
-            builder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Debug);
+            string UserID = "postgres";
+            string DBName = "Week02"; //change it accordingly
+            string Host = "localhost";//127.0.0.1
+            string Port = "5432";
+            optionsBuilder.UseNpgsql($"User ID={UserID};Host={Host};Port={Port};Database={DBName};Pooling=true;");
+            optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Debug);
         }
-        
-        public DbSet<Department> Departments { get; set; } = null!;
-        public DbSet<Employee> Employees { get; set; } = null!;
-        public DbSet<Project> Projects { get; set; } = null!;
-        public DbSet<WorksOn> WorksOn { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Project>().HasKey(x => x.Number);
-            modelBuilder.Entity<WorksOn>().HasKey(x => new { x.ProjectNumber, x.EmployeeID });
-            modelBuilder.Entity<WorksOn>()
-                .HasOne<Project>()
+            modelBuilder.Entity<Employee>().HasKey(x => x.Ssn);
+            modelBuilder.Entity<Department>().HasKey(x => x.Dnumber);
+            modelBuilder.Entity<Dept_Location>().HasKey(x => new{x.Dnumber, x.Dlocation});
+            modelBuilder.Entity<Project>().HasKey(x => x.Pnumber);
+            modelBuilder.Entity<Works_on>().HasKey(x => new{x.Essn, x.Pno});
+            modelBuilder.Entity<Dependent>().HasKey(x => new{x.Essn, x.Dependen_name});
+
+            modelBuilder.Entity<Employee>()
+                .HasOne<Department>()
                 .WithMany()
-                .HasForeignKey(p => p.ProjectNumber);
-            modelBuilder.Entity<WorksOn>()
-                .HasOne<Employee>()
-                .WithMany()
-                .HasForeignKey(e => e.EmployeeID);
+                .HasForeignKey(em => em.Dno);
         }
-    }
-
-    public class Project
-    {
-        public int Number { get; set; }
-        public string? OtherDetails { get; set; }
-    }
-
-    public class WorksOn
-    {
-        public int ProjectNumber { get; set; }
-        public Guid EmployeeID { get; set; }
-        public int Hours { get; set; }
     }
 
     public class Employee
     {
-        public Guid ID { get; set; }
-        
-        [Required,Column(TypeName = "varchar(50)")]
-        public string Name { get; set; }
-        public DateOnly? BirthDate { get; set; }
-        
-        public Department Department { get; set; } = null!;
-        public string DepartmentName;
-        
-        public Employee? Supervisor { get; set; }
-        public Guid? SupervisorID { get; set; }
+        public string Fname { get; set; }
+        public string Minit { get; set; }
+        public string Lname { get; set; }
+        public string Ssn { get; set; }
+        public DateTime Bday { get; set; }
+        public string Address { get; set; }
+        public char Sex { get; set; }
+        public int Salary { get; set; }
+        public string Super_ssn { get; set; }
+        public string Dno { get; set; }
     }
 
     public class Department
     {
-        [Key]
-        public string Name { get; set; } = null!;
-        public Employee? Manager { get; set; }
-        public Guid? ManagerID { get; set; }
+        public string Dname { get; set; }
+        public string Dnumber { get; set; }
+        public string Mgr_ssn { get; set; }
+        public DateTime Mgr_start_date { get; set; }
     }
-    
-    
+
+    public class Dept_Location
+    {
+        public string Dnumber { get; set; }
+        public string Dlocation { get; set; }
+    }
+
+    public class Project
+    {
+        public string Pname { get; set; }
+        public string Pnumber { get; set; }
+        public string Plocation { get; set; }
+        public DateTime? Dnum { get; set; }
+    }
+
+    public class Works_on
+    {
+        public string Essn { get; set; }
+        public string Pno { get; set; }
+        public int Hours { get; set; }
+    }
+
+    public class Dependent
+    {
+        public string Essn { get; set; }
+        public string Dependen_name { get; set; }
+        public char Sex { get; set; }
+        public DateTime Bday { get; set; }
+        public string Relationship { get; set; }
+    }
 }

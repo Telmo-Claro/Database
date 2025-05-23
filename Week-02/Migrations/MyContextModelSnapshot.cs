@@ -3,14 +3,14 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Model;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+using Week_02;
 
 #nullable disable
 
 namespace Week_02.Migrations
 {
-    [DbContext(typeof(MyContext))]
+    [DbContext(typeof(Model.MyContext))]
     partial class MyContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -22,116 +22,141 @@ namespace Week_02.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Model.Department", b =>
+            modelBuilder.Entity("Week_02.Model+Department", b =>
                 {
-                    b.Property<string>("Name")
+                    b.Property<string>("Dnumber")
                         .HasColumnType("text");
 
-                    b.Property<Guid?>("ManagerID")
-                        .HasColumnType("uuid");
+                    b.Property<string>("Dname")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.HasKey("Name");
+                    b.Property<string>("Mgr_ssn")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.HasIndex("ManagerID")
-                        .IsUnique();
+                    b.Property<DateTime>("Mgr_start_date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Dnumber");
 
                     b.ToTable("Departments");
                 });
 
-            modelBuilder.Entity("Model.Employee", b =>
+            modelBuilder.Entity("Week_02.Model+Dependent", b =>
                 {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                    b.Property<string>("Essn")
+                        .HasColumnType("text");
 
-                    b.Property<DateOnly?>("BirthDate")
-                        .HasColumnType("date");
+                    b.Property<string>("Dependen_name")
+                        .HasColumnType("text");
 
-                    b.Property<string>("Name")
+                    b.Property<DateTime>("Bday")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Relationship")
                         .IsRequired()
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("text");
 
-                    b.Property<Guid?>("SupervisorID")
-                        .HasColumnType("uuid");
+                    b.Property<char>("Sex")
+                        .HasColumnType("character(1)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Essn", "Dependen_name");
 
-                    b.HasIndex("SupervisorID");
+                    b.ToTable("Dependents");
+                });
+
+            modelBuilder.Entity("Week_02.Model+Dept_Location", b =>
+                {
+                    b.Property<string>("Dnumber")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Dlocation")
+                        .HasColumnType("text");
+
+                    b.HasKey("Dnumber", "Dlocation");
+
+                    b.ToTable("Dept_Locations");
+                });
+
+            modelBuilder.Entity("Week_02.Model+Employee", b =>
+                {
+                    b.Property<string>("Ssn")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Bday")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Dno")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Fname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Lname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Minit")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Salary")
+                        .HasColumnType("integer");
+
+                    b.Property<char>("Sex")
+                        .HasColumnType("character(1)");
+
+                    b.Property<string>("Super_ssn")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Ssn");
 
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("Model.Project", b =>
+            modelBuilder.Entity("Week_02.Model+Project", b =>
                 {
-                    b.Property<int>("Number")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Number"));
-
-                    b.Property<string>("OtherDetails")
+                    b.Property<string>("Pnumber")
                         .HasColumnType("text");
 
-                    b.HasKey("Number");
+                    b.Property<DateTime?>("Dnum")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Plocation")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Pname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Pnumber");
 
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("Model.WorksOn", b =>
+            modelBuilder.Entity("Week_02.Model+Works_on", b =>
                 {
-                    b.Property<int>("ProjectNumber")
-                        .HasColumnType("integer");
+                    b.Property<string>("Essn")
+                        .HasColumnType("text");
 
-                    b.Property<Guid>("EmployeeID")
-                        .HasColumnType("uuid");
+                    b.Property<string>("Pno")
+                        .HasColumnType("text");
 
                     b.Property<int>("Hours")
                         .HasColumnType("integer");
 
-                    b.HasKey("ProjectNumber", "EmployeeID");
+                    b.HasKey("Essn", "Pno");
 
-                    b.HasIndex("EmployeeID");
-
-                    b.ToTable("WorksOn");
-                });
-
-            modelBuilder.Entity("Model.Department", b =>
-                {
-                    b.HasOne("Model.Employee", "Manager")
-                        .WithOne("Department")
-                        .HasForeignKey("Model.Department", "ManagerID");
-
-                    b.Navigation("Manager");
-                });
-
-            modelBuilder.Entity("Model.Employee", b =>
-                {
-                    b.HasOne("Model.Employee", "Supervisor")
-                        .WithMany()
-                        .HasForeignKey("SupervisorID");
-
-                    b.Navigation("Supervisor");
-                });
-
-            modelBuilder.Entity("Model.WorksOn", b =>
-                {
-                    b.HasOne("Model.Employee", null)
-                        .WithMany()
-                        .HasForeignKey("EmployeeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Model.Project", null)
-                        .WithMany()
-                        .HasForeignKey("ProjectNumber")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Model.Employee", b =>
-                {
-                    b.Navigation("Department")
-                        .IsRequired();
+                    b.ToTable("Works_ons");
                 });
 #pragma warning restore 612, 618
         }
