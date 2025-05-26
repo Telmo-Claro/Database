@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Week_03.Migrations
 {
-    [DbContext(typeof(MyContext))]
+    [DbContext(typeof(Model.MyContext))]
     [Migration("20250522101931_CreateTables")]
     partial class CreateTables
     {

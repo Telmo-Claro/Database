@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.EntityFrameworkCore;
 
 namespace Week_02;
@@ -36,64 +37,20 @@ public class Model
             modelBuilder.Entity<Dept_Location>().HasKey(x => new{x.Dnumber, x.Dlocation});
             modelBuilder.Entity<Project>().HasKey(x => x.Pnumber);
             modelBuilder.Entity<Works_on>().HasKey(x => new{x.Essn, x.Pno});
-            modelBuilder.Entity<Dependent>().HasKey(x => new{x.Essn, x.Dependen_name});
+            modelBuilder.Entity<Dependent>().HasKey(x => new{x.Essn, x.Dependent_name});
 
             modelBuilder.Entity<Employee>()
-                .HasOne<Department>()
-                .WithMany()
-                .HasForeignKey(em => em.Dno);
+                .HasOne(x => x.Dependent)
+                .WithMany(e => e.)
+                .HasForeignKey(x => x.Essn);
+
         }
     }
 
-    public class Employee
-    {
-        public string Fname { get; set; }
-        public string Minit { get; set; }
-        public string Lname { get; set; }
-        public string Ssn { get; set; }
-        public DateTime Bday { get; set; }
-        public string Address { get; set; }
-        public char Sex { get; set; }
-        public int Salary { get; set; }
-        public string Super_ssn { get; set; }
-        public string Dno { get; set; }
-    }
 
-    public class Department
-    {
-        public string Dname { get; set; }
-        public string Dnumber { get; set; }
-        public string Mgr_ssn { get; set; }
-        public DateTime Mgr_start_date { get; set; }
-    }
 
-    public class Dept_Location
-    {
-        public string Dnumber { get; set; }
-        public string Dlocation { get; set; }
-    }
 
-    public class Project
-    {
-        public string Pname { get; set; }
-        public string Pnumber { get; set; }
-        public string Plocation { get; set; }
-        public DateTime? Dnum { get; set; }
-    }
 
-    public class Works_on
-    {
-        public string Essn { get; set; }
-        public string Pno { get; set; }
-        public int Hours { get; set; }
-    }
 
-    public class Dependent
-    {
-        public string Essn { get; set; }
-        public string Dependen_name { get; set; }
-        public char Sex { get; set; }
-        public DateTime Bday { get; set; }
-        public string Relationship { get; set; }
-    }
+
 }

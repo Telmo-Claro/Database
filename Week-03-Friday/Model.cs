@@ -1,8 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Week_03_Friday;
-
 public class Model
 {
     public class MyContext : DbContext
