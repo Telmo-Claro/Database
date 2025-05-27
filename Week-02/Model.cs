@@ -43,14 +43,6 @@ public class Model
                 .HasOne(x => x.Dependent)
                 .WithMany(e => e.)
                 .HasForeignKey(x => x.Essn);
-
         }
     }
-
-
-
-
-
-
-
 }

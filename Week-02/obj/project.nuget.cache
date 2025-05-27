@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eXurBYxJxTg=",
+  "dgSpecHash": "CF7+0JYwpqo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Telmo Claro\\Documents\\Projects\\Database\\Week-02\\Week-02.csproj",
+  "projectFilePath": "C:\\Users\\Telmo Claro\\Documents\\Projects\\uni-collection\\Year 2\\Database\\Week-02\\Week-02.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Telmo Claro\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Telmo Claro\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

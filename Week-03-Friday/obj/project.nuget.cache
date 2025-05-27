@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YRSfM+XsU7c=",
+  "dgSpecHash": "5B9IS2skdqM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Telmo Claro\\Documents\\Projects\\Database\\Week-03-Friday\\Week-03-Friday.csproj",
+  "projectFilePath": "C:\\Users\\Telmo Claro\\Documents\\Projects\\uni-collection\\Year 2\\Database\\Week-03-Friday\\Week-03-Friday.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Telmo Claro\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",
     "C:\\Users\\Telmo Claro\\.nuget\\packages\\entityframework6.npgsql\\6.4.3\\entityframework6.npgsql.6.4.3.nupkg.sha512",
